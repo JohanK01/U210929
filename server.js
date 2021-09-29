@@ -3,7 +3,7 @@ const express = require('express');
 const fs = require ('fs');
 
 const app = express();
-const port = 8042;
+const PORT = process.env.PORT || 8042;
 
 app.get('/app.html', (req, res) => {
     fs.readFile('app.html', (err, data) => {
@@ -25,6 +25,7 @@ app.get('/exercuse2.js', (req, res) => {
     })
 })
 
-app.listen(port,() => {
-    console.log(`the app listen to ${port}`);
+app.listen(PORT,() => {
+    console.log(`the app listen to ${PORT}`);
 })
+
